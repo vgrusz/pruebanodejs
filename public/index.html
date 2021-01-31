@@ -8,22 +8,40 @@
   <style>
     .contenedor {
       border: 1px solid red;
-      height: 150px;
+      min-height: 70px;
     }
   </style>
 
   <body>
-    <p>Prueba de archivo estático con node js</p>
     <div class="contenedor">
-      Form para probar método POST
-      <form action="/form" , method="POST">
+      1. Form para probar método POST en un formulario cuya action es /formPost
+      <form action="/formPost" , method="POST">
         <input type="text" , name="inputDePrueba" , placeholder="Texto" />
         <input type="submit" , value="Enviar" />
       </form>
     </div>
 
     <div class="contenedor">
-      Probar método GET con http://localhost:3000/usuario/XXXXXXXXX
+      <p>
+        2. Form para probar método GET en un formulario cuya action es /formGet
+        <br />
+        Equivale a http://dominio.xxx?nombre=YYYYYYYYYY
+      </p>
+
+      <div>
+        <form action="/formGet" , method="GET">
+          <input type="text" , name="nombre" , placeholder="Texto" />
+          <input type="submit" , value="enviar" />
+        </form>
+      </div>
+    </div>
+
+    <div class="contenedor">
+      <p>
+        3. Probar método GET con /usuario/YYYYYYYYYY
+        <br />
+        equivale a http://dominio.xxx/usuario/YYYYYYYYYY
+      </p>
       <div>
         <input
           id="inputId"
@@ -39,29 +57,17 @@
           ,
           value="enviar"
           ,
-          onclick="{window.location='/usuario/'+document.getElementById('inputId').value; console.log(document.getElementById('inputId').value)}"
+          onclick="{window.location='/usuario/'+document.getElementById('inputId').value;}"
         />
       </div>
     </div>
+
     <div class="contenedor">
-      Probar método GET con http://localhost:3000?nombre=XXXXXXXXX
+      4. Probar método POST con SENDFILE
       <div>
-        <input
-          id="inputId2"
-          ,
-          type="text"
-          ,
-          name="inputDePruebaGet2"
-          ,
-          placeholder="Texto"
-        />
-        <input
-          type="button"
-          ,
-          value="enviar"
-          ,
-          onclick="{window.location='/usuario?nombre='+document.getElementById('inputId2').value; console.log(document.getElementById('inputId').value)}"
-        />
+        <form action="/file" method="post">
+          <input type="submit" , value="enviar file" />
+        </form>
       </div>
     </div>
   </body>

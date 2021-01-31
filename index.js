@@ -32,10 +32,10 @@ app.get("/", function (req, res) {
   res.send(data);
 }); */
 
-app.post("/form", function (req, res) {
+app.post("/formPost", function (req, res) {
   res.send(
     imprimirEnPantalla(
-      "Se recibió con método POST en /form ",
+      "Se recibió con método POST en /formPost ",
       req.body.inputDePrueba
     )
   );
@@ -45,17 +45,27 @@ app.post("/form", function (req, res) {
 app.get("/usuario/:nombre", function (req, res) {
   res.send(
     imprimirEnPantalla(
-      "El parámetro recibido mediante GET con http://localhost:3000/usuario/XXXXXXXXX es ",
+      "Se recibió con método GET en /usuario/:nombre",
       req.params.nombre
     )
+  );
+});
+
+app.get("/formGet", function (req, res) {
+  res.send(
+    imprimirEnPantalla("Se recibió con método GET /formGet", req.query.nombre)
   );
 });
 
 app.get("/usuario", function (req, res) {
   res.send(
     imprimirEnPantalla(
-      "El parámetro recibido mediante GET con http://localhost:3000/usuario?nombre=XXXXXXXXX es ",
+      "Se recibió con método GET /usuario/XXXXXXX",
       req.query.nombre
     )
   );
+});
+
+app.post("/file", function (req, res) {
+  res.sendFile("/hello.txt", { root: __dirname });
 });
