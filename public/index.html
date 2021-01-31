@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nodejs static</title>
+  </head>
+  <style>
+    .contenedor {
+      border: 1px solid red;
+      height: 150px;
+    }
+  </style>
+
+  <body>
+    <p>Prueba de archivo estático con node js</p>
+    <div class="contenedor">
+      Form para probar método POST
+      <form action="/form" , method="POST">
+        <input type="text" , name="inputDePrueba" , placeholder="Texto" />
+        <input type="submit" , value="Enviar" />
+      </form>
+    </div>
+
+    <div class="contenedor">
+      Probar método GET con http://localhost:3000/usuario/XXXXXXXXX
+      <div>
+        <input
+          id="inputId"
+          ,
+          type="text"
+          ,
+          name="inputDePruebaGet"
+          ,
+          placeholder="Texto"
+        />
+        <input
+          type="button"
+          ,
+          value="enviar"
+          ,
+          onclick="{window.location='/usuario/'+document.getElementById('inputId').value; console.log(document.getElementById('inputId').value)}"
+        />
+      </div>
+    </div>
+    <div class="contenedor">
+      Probar método GET con http://localhost:3000?nombre=XXXXXXXXX
+      <div>
+        <input
+          id="inputId2"
+          ,
+          type="text"
+          ,
+          name="inputDePruebaGet2"
+          ,
+          placeholder="Texto"
+        />
+        <input
+          type="button"
+          ,
+          value="enviar"
+          ,
+          onclick="{window.location='/usuario?nombre='+document.getElementById('inputId2').value; console.log(document.getElementById('inputId').value)}"
+        />
+      </div>
+    </div>
+  </body>
+</html>
