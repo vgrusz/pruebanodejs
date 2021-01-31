@@ -9,6 +9,14 @@
     .contenedor {
       border: 1px solid red;
       min-height: 70px;
+      padding: 10px;
+    }
+    .formElement {
+      display: flex;
+      margin: 10px 0px 10px 0px;
+    }
+    .inp {
+      width: 100%;
     }
   </style>
 
@@ -31,7 +39,7 @@
       <div>
         <form action="/formGet" , method="GET">
           <input type="text" , name="nombre" , placeholder="Texto" />
-          <input type="submit" , value="enviar" />
+          <input type="submit" , value="Enviar" />
         </form>
       </div>
     </div>
@@ -43,19 +51,11 @@
         equivale a http://dominio.xxx/usuario/YYYYYYYYYY
       </p>
       <div>
-        <input
-          id="inputId"
-          ,
-          type="text"
-          ,
-          name="inputDePruebaGet"
-          ,
-          placeholder="Texto"
-        />
+        <input id="inputId" , type="text" , name="inputDePruebaGet" , placeholder="Texto" />
         <input
           type="button"
           ,
-          value="enviar"
+          value="Enviar"
           ,
           onclick="{window.location='/usuario/'+document.getElementById('inputId').value;}"
         />
@@ -66,9 +66,59 @@
       4. Probar método POST con SENDFILE
       <div>
         <form action="/file" method="post">
-          <input type="submit" , value="enviar file" />
+          <input type="submit" , value="Enviar archivo" />
         </form>
       </div>
     </div>
-  </body>
+
+    <div class="contenedor">
+      5. Enviar mail
+      <form action="/mail" , method="POST">
+        <input type="text" , name="email" , placeholder="Tu email" />
+        <input type="submit" , value="Enviar" />
+      </form>
+    </div>
+
+    <div class="contenedor">
+      6. Trabajo práctico
+<form  action="/trabajoPractico" , method="post", style="width: 50%">
+    <fieldset style="margin: 10px 0px"> 
+        <legend>Datos a enviar:</legend>
+    <div class="formElement">
+        <label for="nombre">Nombre</label>
+        <input class="inp", type="text", name="nombre", placeholder="Nombre">
+    </div>
+
+    <div class="formElement">
+        <label for="apellido">Apellido</label>
+        <input class="inp" , type="text" , name="apellido" , placeholder="Apellido" />
+      </div>
+
+      <div class="formElement">
+        <label for="edad">Edad</label>
+        <input class="inp" , type="text" , name="edad" , placeholder="Edad" />
+      </div>
+
+      <div class="formElement">
+        <label for="celular">Celular</label>
+        <input class="inp" , type="text" , name="celular" , placeholder="Celular" />
+      </div>
+
+      <div class="formElement">
+        <label for="paisDeNacimiento">País de nacimiento</label>
+        <input class="inp" , type="text" , name="paisDeNacimiento" , placeholder="País natal" />
+      </div>
+
+      <div class="formElement">
+        <label for="paisDeResidencia">País de residencia</label>
+        <input class="inp" , type="text" , name="paisDeResidencia" , placeholder="País de residencia actual" />
+      </div>
+
+
+</fieldset>
+    <input type="submit" value="Enviar">
+
+</form>
+
+</body>
 </html>
